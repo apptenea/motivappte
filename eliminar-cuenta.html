@@ -1,0 +1,538 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Solicita la eliminación de tu cuenta y datos de MotivAppte."
+  >
+
+  <meta name="theme-color" content="#24145F">
+
+  <title>Eliminar cuenta — MotivAppte</title>
+
+  <style>
+    :root {
+      --purple: #24145F;
+      --purple-light: #6c4cff;
+      --pink: #d946a6;
+      --orange: #ff8a5c;
+      --text: #20202a;
+      --muted: #666675;
+      --background: #f8f7fc;
+      --card: #ffffff;
+      --border: #e9e7f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(108, 76, 255, 0.10),
+          transparent 30%
+        ),
+        var(--background);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--purple-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      background: var(--purple);
+      color: white;
+      padding: 18px 24px;
+    }
+
+    .topbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .back {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    .hero {
+      padding: 65px 24px 40px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 78px;
+      height: 78px;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      color: var(--purple);
+      font-size: clamp(34px, 6vw, 50px);
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 0 24px 70px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: clamp(25px, 5vw, 45px);
+      box-shadow: 0 18px 50px rgba(36, 20, 95, 0.06);
+    }
+
+    section {
+      margin-bottom: 38px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: var(--purple);
+      font-size: 25px;
+      margin: 0 0 15px;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    .warning {
+      background: #fff5ed;
+      border-left: 4px solid var(--orange);
+      padding: 18px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 22px 0;
+    }
+
+    .steps {
+      margin: 20px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      padding: 15px 15px 15px 55px;
+      margin-bottom: 12px;
+      background: #f7f5ff;
+      border-radius: 14px;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--purple);
+      color: white;
+      font-weight: bold;
+    }
+
+    .email-box {
+      margin-top: 25px;
+      padding: 25px;
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(108, 76, 255, 0.10),
+          rgba(255, 138, 92, 0.10)
+        );
+      border-radius: 18px;
+    }
+
+    .email-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 24px;
+      border-radius: 12px;
+      background: var(--purple);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .email-button:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      margin: 0 6px;
+    }
+
+    @media (max-width: 650px) {
+      .topbar-inner {
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .card {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+
+    <a class="brand" href="index.html">
+      MotivAppte
+    </a>
+
+    <a class="back" href="index.html">
+      ← Volver a MotivAppte
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <div class="hero">
+
+    <div class="icon" aria-hidden="true">
+      <svg
+        viewBox="0 0 100 100"
+        width="78"
+        height="78"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#24145F"/>
+            <stop offset="55%" stop-color="#8A35A8"/>
+            <stop offset="100%" stop-color="#FF8A5C"/>
+          </linearGradient>
+        </defs>
+
+        <rect
+          x="3"
+          y="3"
+          width="94"
+          height="94"
+          rx="22"
+          fill="url(#gradient)"
+        />
+
+        <path
+          d="M24 67 L37 52 L49 63 L63 47 L78 67 Z"
+          fill="#24145F"
+          opacity="0.95"
+        />
+
+        <circle
+          cx="51"
+          cy="53"
+          r="11"
+          fill="#FFF4C8"
+        />
+
+        <path
+          d="M27 25 L50 51 L74 25 L74 72 L62 72 L62 49 L50 62 L38 49 L38 72 L27 72 Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+
+    <h1>Eliminar cuenta</h1>
+
+    <p>
+      Solicita la eliminación de tu cuenta y de los datos
+      asociados a MotivAppte.
+    </p>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="card">
+
+      <section>
+
+        <h2>¿Quieres eliminar tu cuenta?</h2>
+
+        <p>
+          Puedes solicitar la eliminación de tu cuenta de MotivAppte
+          y de los datos personales asociados a ella.
+        </p>
+
+        <p>
+          La solicitud será revisada para verificar que corresponde
+          al titular de la cuenta antes de proceder a la eliminación.
+        </p>
+
+      </section>
+
+
+      <section>
+
+        <h2>¿Qué datos se eliminarán?</h2>
+
+        <p>
+          Cuando se complete la eliminación de la cuenta, se
+          eliminarán los datos asociados al usuario que ya no sean
+          necesarios para cumplir obligaciones legales o de seguridad.
+        </p>
+
+        <ul>
+          <li>Cuenta de usuario.</li>
+          <li>Datos de autenticación asociados.</li>
+          <li>Frases favoritas.</li>
+          <li>Historial asociado a la cuenta.</li>
+          <li>Preferencias almacenadas en nuestros servicios.</li>
+        </ul>
+
+        <p>
+          Determinados datos técnicos o información que deba
+          conservarse por obligación legal podrán mantenerse durante
+          el periodo exigido por la legislación aplicable.
+        </p>
+
+      </section>
+
+
+      <section>
+
+        <h2>Cómo solicitar la eliminación</h2>
+
+        <ol class="steps">
+
+          <li>
+            Utiliza el botón de contacto que aparece al final
+            de esta página.
+          </li>
+
+          <li>
+            Envía la solicitud desde la dirección de correo
+            asociada a tu cuenta de MotivAppte.
+          </li>
+
+          <li>
+            Indica que deseas eliminar tu cuenta de MotivAppte.
+          </li>
+
+          <li>
+            Revisaremos la solicitud y podremos solicitar
+            información adicional para verificar la titularidad
+            de la cuenta.
+          </li>
+
+          <li>
+            Una vez verificada la solicitud, procederemos a
+            eliminar la cuenta y los datos asociados que
+            correspondan.
+          </li>
+
+        </ol>
+
+      </section>
+
+
+      <section>
+
+        <div class="warning">
+
+          <strong>Importante</strong>
+
+          <p style="margin-top: 8px; margin-bottom: 0;">
+            Desinstalar MotivAppte del dispositivo no elimina
+            automáticamente la cuenta ni los datos almacenados
+            en nuestros servicios.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <h2>Solicitud de eliminación</h2>
+
+        <p>
+          Para iniciar el proceso, envía una solicitud desde la
+          dirección de correo electrónico asociada a tu cuenta.
+        </p>
+
+        <div class="email-box">
+
+          <strong>
+            Solicitud de eliminación de cuenta
+          </strong>
+
+          <p style="margin-top: 8px;">
+            En el mensaje indica:
+          </p>
+
+          <p>
+            <strong>
+              "Solicito la eliminación de mi cuenta de MotivAppte."
+            </strong>
+          </p>
+
+          <!--
+            SUSTITUIR EL CORREO ANTES DE PUBLICAR
+          -->
+
+          <a
+            class="email-button"
+            href="mailto:apptenea.services@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta%20MotivAppte&body=Solicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20de%20MotivAppte.%0A%0ACorreo%20asociado%20a%20la%20cuenta%3A%20"
+          >
+            Solicitar eliminación
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <h2>Desde la aplicación</h2>
+
+        <p>
+          MotivAppte también ofrecerá una opción de eliminación
+          de cuenta dentro de la propia aplicación.
+        </p>
+
+        <p>
+          Desde la aplicación, el usuario podrá acceder a la
+          configuración de su cuenta y solicitar la eliminación
+          de sus datos.
+        </p>
+
+      </section>
+
+
+      <section>
+
+        <h2>¿Necesitas ayuda?</h2>
+
+        <p>
+          Si tienes cualquier problema con el proceso de eliminación
+          o necesitas información adicional sobre el tratamiento
+          de tus datos, puedes consultar nuestra
+          <a href="privacidad.html">
+            Política de Privacidad
+          </a>.
+        </p>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div>
+    © 2026 MotivAppte — Un proyecto de Apptenea.
+  </div>
+
+  <div style="margin-top: 8px;">
+
+    <a href="index.html">
+      MotivAppte
+    </a>
+
+    <a href="privacidad.html">
+      Política de Privacidad
+    </a>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
+```
