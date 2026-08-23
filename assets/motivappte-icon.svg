@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">MotivAppte icon</title>
+  <desc id="desc">Purple rounded square with a sunrise behind a stylized mountain M.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="70" y1="20" x2="430" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#713DE0"/>
+      <stop offset="0.52" stop-color="#6338D1"/>
+      <stop offset="1" stop-color="#34208D"/>
+    </linearGradient>
+
+    <linearGradient id="sun" x1="256" y1="180" x2="256" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE66D"/>
+      <stop offset="1" stop-color="#FF9B58"/>
+    </linearGradient>
+
+    <linearGradient id="mountainM" x1="170" y1="210" x2="330" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E8DFFF"/>
+    </linearGradient>
+
+    <linearGradient id="mountainBack" x1="0" y1="250" x2="512" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4B2CB0"/>
+      <stop offset="1" stop-color="#24155F"/>
+    </linearGradient>
+
+    <clipPath id="round">
+      <rect width="512" height="512" rx="112"/>
+    </clipPath>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+
+    <!-- atmospheric glow -->
+    <circle cx="256" cy="226" r="112" fill="#FFD95D" opacity=".13" filter="url(#glow)"/>
+
+    <!-- clouds -->
+    <g fill="#D49AEF" opacity=".42">
+      <path d="M-30 225 C20 185 55 188 82 218 C101 196 135 194 157 220 C174 211 197 219 207 241 L-30 241Z"/>
+      <path d="M340 225 C360 193 397 192 419 218 C444 190 487 197 516 225 L516 246 L340 246Z"/>
+    </g>
+
+    <!-- sunrise -->
+    <circle cx="256" cy="225" r="63" fill="url(#sun)"/>
+
+    <!-- sun rays -->
+    <g stroke="#FFC65B" stroke-width="9" stroke-linecap="round" opacity=".9">
+      <path d="M256 103V62"/>
+      <path d="M204 116L181 82"/>
+      <path d="M308 116L331 82"/>
+      <path d="M169 154L134 132"/>
+      <path d="M343 154L378 132"/>
+      <path d="M151 205L111 198"/>
+      <path d="M361 205L401 198"/>
+    </g>
+
+    <!-- distant mountains -->
+    <path d="M-30 343 L85 251 L142 300 L213 238 L280 310 L351 242 L438 319 L540 255 L540 540 L-30 540Z"
+          fill="#4828A9"/>
+    <path d="M-30 386 L77 306 L133 350 L210 278 L276 354 L347 287 L430 354 L540 300 L540 540 L-30 540Z"
+          fill="#37208B"/>
+
+    <!-- main M / mountain -->
+    <path d="M92 386 L174 202 L256 303 L338 202 L420 386
+             L344 346 L303 267 L256 341 L209 267 L168 346 Z"
+          fill="url(#mountainM)"/>
+
+    <!-- foreground mountain shadows -->
+    <path d="M92 386 L168 346 L141 405 Z" fill="#D9CCFF" opacity=".9"/>
+    <path d="M420 386 L344 346 L371 405 Z" fill="#D9CCFF" opacity=".9"/>
+
+    <!-- foreground landscape -->
+    <path d="M-20 430 L82 372 L145 408 L209 370 L270 418 L337 368 L409 412 L532 353 L532 540 L-20 540Z"
+          fill="url(#mountainBack)" opacity=".88"/>
+
+    <!-- subtle snow/light on M -->
+    <path d="M174 202 L256 303 L338 202 L317 255 L284 291 L256 326 L228 291 L195 255Z"
+          fill="#FFF7FF" opacity=".34"/>
+  </g>
+
+  <rect x="3" y="3" width="506" height="506" rx="109"
+        fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="6"/>
+</svg>
