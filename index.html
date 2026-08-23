@@ -170,15 +170,57 @@
     </section>
 
     <section class="access" id="acceso">
-      <div class="access-card">
-        <div>
-          <span class="eyebrow light">PRÓXIMAMENTE</span>
-          <h2>¿Quieres ser de los primeros?</h2>
-          <p>MotivAppte está creciendo. Apúntate al acceso anticipado y descubre la app antes que nadie.</p>
-        </div>
-        <a class="button white" href="mailto:apptenea.services@gmail.com?subject=Acceso%20anticipado%20MotivAppte">Quiero acceso anticipado <span>→</span></a>
+  <div class="access-card">
+    <div class="access-content">
+      <span class="eyebrow light">PRÓXIMAMENTE</span>
+
+      <h2>¿Quieres ser de los primeros?</h2>
+
+      <p>
+        MotivAppte está creciendo. Apúntate al acceso anticipado
+        y descubre la app antes que nadie.
+      </p>
+    </div>
+
+    <form
+      id="access-form"
+      class="access-form"
+      action="https://formspree.io/f/mnpayaql"
+      method="POST"
+    >
+      <label for="access-email" class="sr-only">
+        Tu correo electrónico
+      </label>
+
+      <div class="access-form-row">
+        <input
+          type="email"
+          id="access-email"
+          name="email"
+          placeholder="Tu correo electrónico"
+          autocomplete="email"
+          required
+        >
+
+        <input
+          type="hidden"
+          name="subject"
+          value="Nuevo registro de acceso anticipado - MotivAppte"
+        >
+
+        <button
+          type="submit"
+          class="button white"
+          id="access-submit"
+        >
+          Apuntarme <span>→</span>
+        </button>
       </div>
-    </section>
+
+      <div id="access-message" class="access-message"></div>
+    </form>
+  </div>
+</section>
   </main>
 
   <footer>
