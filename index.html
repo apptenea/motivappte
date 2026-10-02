@@ -3,235 +3,609 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#6c4cff">
-  <meta name="description" content="MotivAppte — una frase para hoy, un pequeño impulso para seguir.">
-  <title>MotivAppte — Una frase. Un impulso.</title>
+  <meta name="theme-color" content="#6338D1">
+
+  <title>MotivAppte | Frases, chistes, mantras, cuentos y mucho más</title>
+  <meta name="description" content="MotivAppte te ofrece cada día frases, chistes, mantras, cuentos y efemérides para encontrar un pequeño momento de motivación, humor o curiosidad.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://apptenea.github.io/motivappte/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apptenea.github.io/motivappte/">
+  <meta property="og:title" content="MotivAppte | Frases, chistes, mantras, cuentos y mucho más">
+  <meta property="og:description" content="MotivAppte te ofrece cada día frases, chistes, mantras, cuentos y efemérides para encontrar un pequeño momento de motivación, humor o curiosidad.">
+  <meta property="og:image" content="https://apptenea.github.io/motivappte/assets/motivappte-og.svg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="MotivAppte">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MotivAppte | Frases, chistes, mantras, cuentos y mucho más">
+  <meta name="twitter:description" content="MotivAppte te ofrece cada día frases, chistes, mantras, cuentos y efemérides para encontrar un pequeño momento de motivación, humor o curiosidad.">
+  <meta name="twitter:image" content="https://apptenea.github.io/motivappte/assets/motivappte-og.svg">
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/motivappte-icon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
 
-  <header class="nav">
-    <a class="brand" href="#inicio" aria-label="MotivAppte">
-      <img src="assets/motivappte-icon.svg" alt="" class="brand-icon">
-      <span>Motiv<span>Appte</span></span>
-    </a>
-    <nav>
-      <a href="#funciones">Funciones</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyecto">El proyecto</a>
+  <!-- ========== MOBILE MENU OVERLAY ========== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Cerrar menú">
+      <span></span><span></span>
+    </button>
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <a href="#inicio" class="mobile-nav-link">Inicio</a>
+      <a href="#contenido" class="mobile-nav-link">Qué encontrarás</a>
+      <a href="#como-funciona" class="mobile-nav-link">Cómo funciona</a>
+      <a href="#cuentos" class="mobile-nav-link">Cuentos</a>
+      <a href="#la-app" class="mobile-nav-link">La app</a>
+      <a href="https://apptenea.com/" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Apptenea ↗</a>
     </nav>
-    <a class="nav-cta" href="#acceso">Próximamente</a>
+    <a href="#" class="btn btn-primary mobile-menu-cta" aria-label="Descargar MotivAppte"><!-- TODO: Replace with Google Play URL -->
+      Descargar MotivAppte
+    </a>
+  </div>
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="MotivAppte — inicio">
+        <img src="assets/motivappte-icon.svg" alt="" class="brand-icon" width="34" height="34" aria-hidden="true">
+        <span class="brand-name">Motiv<span>Appte</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#contenido">Qué encontrarás</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#cuentos">Cuentos</a>
+        <a href="#la-app">La app</a>
+        <a href="https://apptenea.com/" target="_blank" rel="noopener noreferrer">Apptenea ↗</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" class="btn btn-primary btn-sm" aria-label="Descargar MotivAppte"><!-- TODO: Replace with Google Play URL -->
+          Descargar
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-copy">
-        <div class="pill"><span class="dot"></span> Un pequeño impulso cada día</div>
-        <h1>Hoy puede ser<br><em>un buen día.</em></h1>
-        <p class="hero-text">
-          MotivAppte convierte unos segundos de tu día en un momento de inspiración.
-          Descubre una frase, guárdala, vuelve a ella y deja que te acompañe.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#acceso">Quiero probarla <span>→</span></a>
-          <a class="button secondary" href="#funciones">Descubrir MotivAppte</a>
-        </div>
-        <div class="hero-meta">
-          <span>✦ Frase diaria</span>
-          <span>♡ Favoritos</span>
-          <span>◷ Recordatorios</span>
-        </div>
-      </div>
 
-      <div class="hero-visual" aria-label="Vista previa de MotivAppte">
-        <div class="glow"></div>
-        <div class="phone phone-back">
-          <div class="phone-screen soft-screen"></div>
-        </div>
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="app-top">
-              <span class="mini-logo">M</span>
-              <span class="today">HOY</span>
-              <span class="heart">♡</span>
-            </div>
-            <div class="quote-wrap">
-              <span class="quote-mark">“</span>
-              <h2>La mejor forma de empezar es dejar de hablar y empezar a hacer.</h2>
-              <p>— Walt Disney</p>
-            </div>
-            <div class="phone-actions">
-              <button>♡</button><button>↗</button><button>↻</button>
-            </div>
-            <div class="progress"><span></span></div>
+    <!-- ========== 1. HERO ========== -->
+    <section class="hero" id="inicio" aria-label="Presentación de MotivAppte">
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <div class="pill">
+            <span class="pill-dot" aria-hidden="true"></span>
+            MOTIVAPPTE · UN MOMENTO PARA TI
+          </div>
+
+          <h1>Algo bueno<br><em>para cada momento.</em></h1>
+
+          <p class="hero-text">
+            Descubre cada día una frase, un chiste, un mantra, una historia o una curiosidad.
+            Guarda tus favoritos y crea tu pequeño momento diario.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary" aria-label="Descargar MotivAppte en Google Play"><!-- TODO: Replace with Google Play URL -->
+              Descargar MotivAppte <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contenido" class="btn btn-ghost">
+              Descubrir la app
+            </a>
+          </div>
+
+          <div class="hero-meta" aria-label="Características destacadas">
+            <span>✦ Frase diaria</span>
+            <span>◉ Chiste del día</span>
+            <span>◈ Mantra</span>
+            <span>♡ Favoritos</span>
           </div>
         </div>
-        <div class="floating-card card-fav">♡ <span>Guardada en favoritos</span></div>
-        <div class="floating-card card-notify">◷ <span>Tu momento, a tu hora</span></div>
-      </div>
-    </section>
 
-    <section class="quote-band">
-      <p>“A veces solo necesitas una buena frase en el momento adecuado.”</p>
-    </section>
+        <div class="hero-visual reveal reveal-delay" aria-label="Vista previa de la aplicación MotivAppte">
+          <div class="phone-glow" aria-hidden="true"></div>
 
-    <section class="section" id="funciones">
-      <div class="section-heading">
-        <span class="eyebrow">TODO LO QUE NECESITAS</span>
-        <h2>Inspiración que <em>se adapta a ti.</em></h2>
-        <p>Una experiencia sencilla, cuidada y pensada para convertir la motivación en un pequeño hábito.</p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature feature-large">
-          <div class="feature-icon sun">☀</div>
-          <span class="feature-number">01</span>
-          <h3>Tu frase del día</h3>
-          <p>Cada día encontrarás una nueva frase para empezar, continuar o cerrar el día con otra perspectiva.</p>
-          <div class="mini-quote">“Haz que hoy cuente.”</div>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon heart-icon">♡</div>
-          <span class="feature-number">02</span>
-          <h3>Tus favoritas</h3>
-          <p>Guarda las frases que más conecten contigo y vuelve a ellas cuando quieras.</p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon history-icon">↺</div>
-          <span class="feature-number">03</span>
-          <h3>Tu historial</h3>
-          <p>Recuerda las frases que ya has descubierto y evita repetirlas innecesariamente.</p>
-        </article>
-
-        <article class="feature feature-wide">
-          <div class="feature-icon bell">◷</div>
-          <div>
-            <span class="feature-number">04</span>
-            <h3>Recordatorios a tu manera</h3>
-            <p>Elige cuándo quieres recibir tu momento de inspiración. Porque la motivación también tiene su momento.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-topbar">
+                <span class="phone-logo">M</span>
+                <span class="phone-today">HOY</span>
+                <span class="phone-heart">♡</span>
+              </div>
+              <div class="phone-tabs">
+                <span class="phone-tab active">Frase</span>
+                <span class="phone-tab">Chiste</span>
+                <span class="phone-tab">Mantra</span>
+                <span class="phone-tab">Cuento</span>
+              </div>
+              <div class="phone-quote">
+                <span class="phone-quote-mark">"</span>
+                <p class="phone-quote-text">La mejor forma de empezar es dejar de hablar y empezar a hacer.</p>
+                <p class="phone-quote-author">— Walt Disney</p>
+              </div>
+              <div class="phone-actions">
+                <button type="button" aria-label="Guardar en favoritos">♡</button>
+                <button type="button" aria-label="Compartir">↗</button>
+                <button type="button" aria-label="Siguiente">↻</button>
+              </div>
+              <div class="phone-progress"><span></span></div>
+            </div>
           </div>
-          <div class="time-chip">11:00 <span>✓</span></div>
-        </article>
 
-        <article class="feature">
-          <div class="feature-icon sparkle">✦</div>
-          <span class="feature-number">05</span>
-          <h3>Una experiencia personal</h3>
-          <p>Tu usuario, tus favoritos, tu historial y tus preferencias.</p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon cloud">☁</div>
-          <span class="feature-number">06</span>
-          <h3>Siempre contigo</h3>
-          <p>Una app ligera y pensada para acompañarte allá donde estés.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="experience" id="experiencia">
-      <div class="experience-inner">
-        <div class="experience-copy">
-          <span class="eyebrow light">UN MOMENTO PARA TI</span>
-          <h2>No necesitas<br>mucho. Solo <em>un momento.</em></h2>
-          <p>MotivAppte nace para algo muy sencillo: que abrir una aplicación pueda convertirse en una pausa positiva dentro de tu día.</p>
-          <div class="steps">
-            <div><b>01</b><span>Abre MotivAppte</span></div>
-            <div><b>02</b><span>Descubre tu frase</span></div>
-            <div><b>03</b><span>Quédate con ella</span></div>
+          <div class="float-card float-chiste" aria-hidden="true">
+            <span class="float-card-icon">◉</span>
+            <span>Chiste del día</span>
+          </div>
+          <div class="float-card float-mantra" aria-hidden="true">
+            <span class="float-card-icon">◈</span>
+            <span>Mantra de hoy</span>
+          </div>
+          <div class="float-card float-efemeride" aria-hidden="true">
+            <span class="float-card-icon">📅</span>
+            <span>Tal día como hoy</span>
           </div>
         </div>
-        <div class="quote-card">
-          <div class="quote-card-top"><span>MOTIVAPPTE</span><span>HOY</span></div>
-          <div class="big-quote">“</div>
-          <p>El momento perfecto para empezar no existe. Empieza y haz que el momento sea perfecto.</p>
-          <div class="quote-card-bottom"><span>Inspiración diaria</span><span>♡</span></div>
-        </div>
       </div>
     </section>
 
-    <section class="project section" id="proyecto">
-      <div class="project-mark"><img src="assets/motivappte-icon.svg" alt="MotivAppte"></div>
-      <div>
-        <span class="eyebrow">UN PROYECTO DE APPTENEA</span>
-        <h2>Pequeña en concepto.<br><em>Grande en intención.</em></h2>
-        <p>MotivAppte es uno de los proyectos propios de Apptenea: una aplicación creada desde cero para demostrar que una idea sencilla también puede convertirse en una experiencia digital cuidada.</p>
-        <div class="tech-list"><span>Flutter</span><span>Firebase</span><span>Android</span><span>Notificaciones</span></div>
+    <!-- ========== 2. BANDA MARQUEE ========== -->
+    <div class="band" aria-hidden="true">
+      <div class="band-track">
+        <span class="band-item">✦ Frases</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◉ Chistes</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◈ Mantras</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">☽ Cuentos</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">📅 Efemérides</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">♡ Favoritos</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◷ Recordatorios</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">★ Premium</span>
+        <span class="band-sep">·</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="band-item">✦ Frases</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◉ Chistes</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◈ Mantras</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">☽ Cuentos</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">📅 Efemérides</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">♡ Favoritos</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">◷ Recordatorios</span>
+        <span class="band-sep">·</span>
+        <span class="band-item">★ Premium</span>
+        <span class="band-sep">·</span>
       </div>
-    </section>
-
-    <section class="access" id="acceso">
-  <div class="access-card">
-    <div class="access-content">
-      <span class="eyebrow light">PRÓXIMAMENTE</span>
-
-      <h2>¿Quieres ser de los primeros?</h2>
-
-      <p>
-        MotivAppte está creciendo. Apúntate al acceso anticipado
-        y descubre la app antes que nadie.
-      </p>
     </div>
 
-    <form
-      id="access-form"
-      class="access-form"
-      action="https://formspree.io/f/mnpayaql"
-      method="POST"
-    >
-      <label for="access-email" class="sr-only">
-        Tu correo electrónico
-      </label>
+    <!-- ========== 3. CONTENIDO 01-05 ========== -->
+    <section class="section" id="contenido" aria-labelledby="contenido-heading">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="eyebrow">CADA DÍA ALGO DIFERENTE</span>
+          <h2 id="contenido-heading">Cinco formas de encontrar<br><em>tu momento.</em></h2>
+          <p>Frases, humor, calma, historias y curiosidades. Cada día algo diferente para cada momento diferente.</p>
+        </div>
 
-      <div class="access-form-row">
-        <input
-          type="email"
-          id="access-email"
-          name="email"
-          placeholder="Tu correo electrónico"
-          autocomplete="email"
-          required
-        >
+        <div class="content-grid">
+          <article class="content-card content-card-large reveal">
+            <div class="content-card-top">
+              <span class="content-number">01</span>
+              <div class="content-icon content-icon-sun" aria-hidden="true">✦</div>
+            </div>
+            <h3>Frases</h3>
+            <p>Una idea para empezar, continuar o terminar el día con otra perspectiva. Seleccionadas para que algo se mueva.</p>
+            <div class="content-preview" aria-hidden="true">
+              <span class="preview-mark">"</span>
+              <p>Haz que hoy cuente.</p>
+            </div>
+          </article>
 
-        <input
-          type="hidden"
-          name="subject"
-          value="Nuevo registro de acceso anticipado - MotivAppte"
-        >
+          <article class="content-card reveal reveal-delay">
+            <span class="content-number">02</span>
+            <div class="content-icon content-icon-laugh" aria-hidden="true">◉</div>
+            <h3>Chistes</h3>
+            <p>Un momento rápido para desconectar y sonreír. Porque reír también es necesario.</p>
+          </article>
 
-        <button
-          type="submit"
-          class="button white"
-          id="access-submit"
-        >
-          Apuntarme <span>→</span>
-        </button>
+          <article class="content-card reveal reveal-delay-2">
+            <span class="content-number">03</span>
+            <div class="content-icon content-icon-mantra" aria-hidden="true">◈</div>
+            <h3>Mantras</h3>
+            <p>Pequeñas frases para parar, respirar y volver a centrarte. Sin dramatismo, sin esfuerzo.</p>
+          </article>
+
+          <article class="content-card content-card-wide reveal">
+            <div class="content-card-wide-left">
+              <span class="content-number">04</span>
+              <div class="content-icon content-icon-book" aria-hidden="true">☽</div>
+              <h3>Cuentos</h3>
+              <p>Historias para leer con calma. Algunas también ilustradas, algunas especiales, todas para quedarte un rato.</p>
+            </div>
+            <div class="content-card-wide-visual" aria-hidden="true">
+              <div class="book-stack">
+                <div class="book-mini book-1"></div>
+                <div class="book-mini book-2"></div>
+                <div class="book-mini book-3"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-card reveal reveal-delay">
+            <span class="content-number">05</span>
+            <div class="content-icon content-icon-cal" aria-hidden="true">📅</div>
+            <h3>Tal día como hoy</h3>
+            <p>Curiosidades y acontecimientos que ocurrieron un día como hoy. La historia tiene más sorpresas de las que parece.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div id="access-message" class="access-message"></div>
-    </form>
-  </div>
-</section>
+    <!-- ========== 4. EXPERIENCIA DIARIA ========== -->
+    <section class="daily-section" id="experiencia" aria-labelledby="daily-heading">
+      <div class="section-inner">
+        <div class="daily-inner">
+          <div class="daily-copy reveal">
+            <span class="eyebrow light">TU MOMENTO DIARIO</span>
+            <h2 id="daily-heading">No sabes qué necesitas hoy.<br><em>MotivAppte te lo pone delante.</em></h2>
+            <p>Contenido nuevo cada día. Sin repetir innecesariamente. Todo en un solo sitio, todo con un solo gesto.</p>
+
+            <div class="daily-badges">
+              <span class="daily-badge">Nuevo cada día</span>
+              <span class="daily-badge">Sin repetir innecesariamente</span>
+              <span class="daily-badge">Guarda tus favoritos</span>
+            </div>
+          </div>
+
+          <div class="daily-card-wrap reveal reveal-delay" aria-hidden="true">
+            <div class="daily-card">
+              <div class="daily-card-header">
+                <span>MOTIVAPPTE</span>
+                <span>HOY</span>
+              </div>
+              <div class="daily-items">
+                <div class="daily-item daily-item-active">
+                  <span class="daily-item-icon">✦</span>
+                  <div>
+                    <span class="daily-item-label">Frase del día</span>
+                    <p class="daily-item-text">El momento perfecto para empezar no existe. Empieza y haz que el momento sea perfecto.</p>
+                  </div>
+                </div>
+                <div class="daily-item">
+                  <span class="daily-item-icon">◉</span>
+                  <div>
+                    <span class="daily-item-label">Chiste del día</span>
+                    <p class="daily-item-text">Un momento para sonreír aguarda aquí.</p>
+                  </div>
+                </div>
+                <div class="daily-item">
+                  <span class="daily-item-icon">◈</span>
+                  <div>
+                    <span class="daily-item-label">Mantra de hoy</span>
+                    <p class="daily-item-text">Estoy exactamente donde necesito estar.</p>
+                  </div>
+                </div>
+                <div class="daily-item">
+                  <span class="daily-item-icon">📅</span>
+                  <div>
+                    <span class="daily-item-label">Efeméride</span>
+                    <p class="daily-item-text">Algo curioso ocurrió un día como hoy...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. CÓMO FUNCIONA ========== -->
+    <section class="section how-section" id="como-funciona" aria-labelledby="how-heading">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="eyebrow">MUY FÁCIL</span>
+          <h2 id="how-heading">Abre. Descubre.<br><em>Quédate con lo que te haga bien.</em></h2>
+        </div>
+
+        <div class="how-grid">
+          <div class="how-step reveal">
+            <span class="how-number">01</span>
+            <div class="how-line" aria-hidden="true"></div>
+            <h3>Abre MotivAppte</h3>
+            <p>Un gesto. La app te espera cada día con algo nuevo preparado.</p>
+          </div>
+          <div class="how-step reveal reveal-delay">
+            <span class="how-number">02</span>
+            <div class="how-line" aria-hidden="true"></div>
+            <h3>Descubre tu contenido</h3>
+            <p>Frases, chistes, mantras, cuentos y efemérides. Tú decides qué explorar.</p>
+          </div>
+          <div class="how-step reveal reveal-delay-2">
+            <span class="how-number">03</span>
+            <div class="how-line" aria-hidden="true"></div>
+            <h3>Guarda lo que más te guste</h3>
+            <p>Añade a favoritos cualquier contenido para volver a él cuando quieras.</p>
+          </div>
+          <div class="how-step reveal reveal-delay-3">
+            <span class="how-number">04</span>
+            <div class="how-line how-line-last" aria-hidden="true"></div>
+            <h3>Vuelve cuando quieras</h3>
+            <p>MotivAppte está siempre ahí. Con recordatorios o sin ellos, a tu ritmo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. FAVORITOS ========== -->
+    <section class="section fav-section" id="favoritos" aria-labelledby="fav-heading">
+      <div class="section-inner">
+        <div class="fav-inner">
+          <div class="fav-visual reveal" aria-hidden="true">
+            <div class="fav-mockup">
+              <div class="fav-mockup-header">
+                <span class="fav-mockup-title">Mis favoritos</span>
+                <span class="fav-mockup-count">12</span>
+              </div>
+              <div class="fav-item">
+                <span class="fav-item-icon">✦</span>
+                <div>
+                  <span class="fav-item-type">Frase</span>
+                  <p>"No esperes el momento perfecto."</p>
+                </div>
+                <span class="fav-item-heart">♥</span>
+              </div>
+              <div class="fav-item">
+                <span class="fav-item-icon">◈</span>
+                <div>
+                  <span class="fav-item-type">Mantra</span>
+                  <p>"Cada día es un comienzo."</p>
+                </div>
+                <span class="fav-item-heart">♥</span>
+              </div>
+              <div class="fav-item">
+                <span class="fav-item-icon">☽</span>
+                <div>
+                  <span class="fav-item-type">Cuento</span>
+                  <p>"El viajero y el espejo"</p>
+                </div>
+                <span class="fav-item-heart">♥</span>
+              </div>
+              <div class="fav-item fav-item-muted">
+                <span class="fav-item-icon">◉</span>
+                <div>
+                  <span class="fav-item-type">Chiste</span>
+                  <p>¿Por qué el libro de matemáticas...</p>
+                </div>
+                <span class="fav-item-heart">♥</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fav-copy reveal reveal-delay">
+            <span class="eyebrow">TU COLECCIÓN</span>
+            <h2 id="fav-heading">MotivAppte se va<br><em>haciendo tuya.</em></h2>
+            <p>Guarda frases, chistes, mantras y cuentos para volver a ellos cuando quieras. Tu historial personal, sin perder nada.</p>
+            <ul class="fav-list" aria-label="Funciones de favoritos">
+              <li><span aria-hidden="true">♡</span> Favoritos de todos los tipos de contenido</li>
+              <li><span aria-hidden="true">↺</span> Historial de lo que ya has descubierto</li>
+              <li><span aria-hidden="true">◷</span> Recordatorios personalizados</li>
+              <li><span aria-hidden="true">✦</span> Perfil y preferencias propias</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. CUENTOS ========== -->
+    <section class="stories-section" id="cuentos" aria-labelledby="stories-heading">
+      <div class="section-inner">
+        <div class="stories-inner">
+          <div class="stories-visual reveal" aria-label="Imagen de cuento ilustrado de MotivAppte">
+            <div class="stories-img-wrap">
+              <img
+                src="recursos/stories/storie1/storie1_portada.png"
+                alt="Portada de cuento ilustrado en MotivAppte"
+                class="book-img"
+                width="240"
+                height="auto"
+                loading="lazy"
+              >
+              <div class="stories-badge" aria-hidden="true">Ilustrado</div>
+            </div>
+          </div>
+
+          <div class="stories-copy reveal reveal-delay">
+            <span class="eyebrow light">HISTORIAS PARA QUEDARTE UN RATO</span>
+            <h2 id="stories-heading">No todo tiene que<br><em>durar diez segundos.</em></h2>
+            <p>MotivAppte incluye cuentos para leer con calma. Historias normales, historias ilustradas, contenido especial. Algo diferente en cada apertura.</p>
+            <ul class="stories-list" aria-label="Tipos de cuentos">
+              <li><span aria-hidden="true">☽</span> Cuentos para leer sin prisa</li>
+              <li><span aria-hidden="true">🎨</span> Cuentos ilustrados con imágenes</li>
+              <li><span aria-hidden="true">★</span> Contenido especial desbloqueablevia códigos</li>
+              <li><span aria-hidden="true">♡</span> Guárdalos en favoritos para volver</li>
+            </ul>
+            <a href="#" class="btn btn-ghost-light stories-cta" aria-label="Descargar MotivAppte para leer cuentos"><!-- TODO: Replace with Google Play URL -->
+              Explorar cuentos <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 8. TAL DÍA COMO HOY ========== -->
+    <section class="section ephemeris-section" id="efemerides" aria-labelledby="ephemeris-heading">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="eyebrow">EFEMÉRIDES</span>
+          <h2 id="ephemeris-heading">Hoy también<br><em>tiene historia.</em></h2>
+          <p>Cada día esconde algo que merece la pena saber. Curiosidades y hechos que ocurrieron un día como hoy.</p>
+        </div>
+
+        <div class="ephemeris-card reveal reveal-delay" role="img" aria-label="Ejemplo de efeméride: 02 de Octubre">
+          <div class="ephemeris-date">
+            <span class="ephemeris-day">02</span>
+            <span class="ephemeris-month">OCT</span>
+          </div>
+          <div class="ephemeris-content">
+            <span class="ephemeris-label">Un día como hoy...</span>
+            <p class="ephemeris-text">Mahatma Gandhi nació en 1869, en Porbandar, India. Su filosofía de resistencia no violenta cambió el curso de la historia.</p>
+            <div class="ephemeris-tags" aria-label="Categorías">
+              <span>Historia</span>
+              <span>Personajes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ephemeris-hint reveal" aria-hidden="true">
+          <span>+ muchas más curiosidades esperan cada día</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 9. PREMIUM ========== -->
+    <section class="premium-section" id="premium" aria-labelledby="premium-heading">
+      <div class="section-inner">
+        <div class="premium-inner">
+          <div class="premium-copy reveal">
+            <span class="eyebrow light">MOTIVAPPTE PREMIUM</span>
+            <h2 id="premium-heading">Más contenido.<br><em>Menos interrupciones.</em></h2>
+            <p>Para quien quiere sacar más de MotivAppte. Sin presiones, sin urgencias. Cuando quieras y si quieres.</p>
+          </div>
+
+          <div class="premium-features reveal reveal-delay">
+            <div class="premium-card">
+              <span class="premium-icon" aria-hidden="true">★</span>
+              <h3>Contenido exclusivo</h3>
+              <p>Acceso a categorías y contenidos especiales solo disponibles para suscriptores Premium.</p>
+            </div>
+            <div class="premium-card">
+              <span class="premium-icon" aria-hidden="true">◎</span>
+              <h3>Sin interrupciones</h3>
+              <p>Disfruta de MotivAppte sin publicidad. Una experiencia más limpia y concentrada.</p>
+            </div>
+            <div class="premium-card">
+              <span class="premium-icon" aria-hidden="true">✦</span>
+              <h3>Funciones especiales</h3>
+              <p>Acceso prioritario a nuevas funcionalidades y contenido especial de la app.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 10. LA APP ========== -->
+    <section class="section app-section" id="la-app" aria-labelledby="app-heading">
+      <div class="section-inner">
+        <div class="app-inner">
+          <div class="app-mark reveal" aria-hidden="true">
+            <img src="assets/motivappte-icon.svg" alt="" width="80" height="80">
+          </div>
+          <div class="app-copy reveal reveal-delay">
+            <span class="eyebrow">YA ES UNA APP</span>
+            <h2 id="app-heading">MotivAppte ya está creciendo<br><em>fuera de esta web.</em></h2>
+            <p>Una aplicación real, desarrollada de cero por Apptenea. Disponible para Android, construida con tecnología moderna y pensada para durar.</p>
+            <div class="tech-tags" aria-label="Tecnologías utilizadas">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>Android</span>
+            </div>
+            <a href="#" class="btn btn-primary" aria-label="Descargar MotivAppte en Google Play"><!-- TODO: Replace with Google Play URL -->
+              Descargar en Google Play <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 11. APPTENEA ========== -->
+    <section class="apptenea-section" id="apptenea" aria-labelledby="apptenea-heading">
+      <div class="section-inner">
+        <div class="apptenea-inner reveal">
+          <span class="eyebrow light">UN PROYECTO DE APPTENEA</span>
+          <h2 id="apptenea-heading">MotivAppte es uno de los proyectos<br><em>propios de Apptenea.</em></h2>
+          <p>Apptenea crea aplicaciones, webs y productos digitales propios. MotivAppte es uno de ellos: una idea convertida en app real.</p>
+          <a
+            href="https://apptenea.com/"
+            class="btn btn-ghost-light"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Conocer Apptenea (abre en nueva pestaña)"
+          >
+            Conocer Apptenea <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 12. CTA FINAL ========== -->
+    <section class="cta-section" id="cta" aria-labelledby="cta-heading">
+      <div class="section-inner">
+        <div class="cta-inner reveal">
+          <span class="eyebrow light">¿QUÉ NECESITAS HOY?</span>
+          <h2 id="cta-heading">Una frase. Una sonrisa.<br>Un momento para ti.<br><em>Una historia. Una curiosidad.</em></h2>
+          <p>Puede que MotivAppte tenga algo para ti.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-white" aria-label="Descargar MotivAppte"><!-- TODO: Replace with Google Play URL -->
+              Descargar MotivAppte <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contenido" class="btn btn-ghost-light">
+              Descubrir la app
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <a class="brand" href="#inicio">
-      <img src="assets/motivappte-icon.svg" alt="" class="brand-icon">
-      <span>Motiv<span>Appte</span></span>
-    </a>
-    <p>Un pequeño impulso. Cada día.</p>
-    <a href="https://apptenea.github.io/apptenea/">← Volver a Apptenea</a>
-    <a href="privacidad.html">Política de Privacidad</a>
-    <a href="eliminar-cuenta.html">Eliminar cuenta MotivAppte</a>
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio" aria-label="MotivAppte — volver al inicio">
+          <img src="assets/motivappte-icon.svg" alt="" class="brand-icon" width="28" height="28" aria-hidden="true">
+          <span class="brand-name">Motiv<span>Appte</span></span>
+        </a>
+        <p class="footer-tagline">Un pequeño momento. Cada día.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="#inicio">Inicio</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="eliminar-cuenta.html">Eliminar cuenta</a>
+        <a href="https://apptenea.com/" target="_blank" rel="noopener noreferrer">Apptenea ↗</a>
+      </nav>
+
+      <p class="footer-copy">© 2026 MotivAppte · Un proyecto de <a href="https://apptenea.com/" target="_blank" rel="noopener noreferrer">Apptenea</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
